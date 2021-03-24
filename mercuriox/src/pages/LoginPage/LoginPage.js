@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Divisao } from "./styled";
-import { MeuBotao } from "./styled";
+import { Division, MyButton, Title } from "./styles";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -47,12 +46,12 @@ export default function LoginPage() {
   };
 
   return (
-    <Divisao>
-      <p>Login</p>
+    <Division>
+      <Title>Login</Title>
       Email: <input value={email} onChange={pegaEmail}></input>
       Senha: <input value={senha} onChange={pegaSenha}></input>
-      <MeuBotao onClick={login}>Fazer login</MeuBotao>
-    </Divisao>
+      <MyButton onClick={login}>Entrar</MyButton>
+    </Division>
   );
 }
 
