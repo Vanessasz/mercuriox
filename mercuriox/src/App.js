@@ -1,7 +1,6 @@
 import React from "react";
-import "./App.css";
 import styled from "styled-components";
-import Router from "./components/Router/Router";
+import Router from "./pages/Router/Router";
 
 const Container = styled.div`
   padding: 60px 0;
