@@ -14,11 +14,11 @@ export const Title = styled.h1`
 `;
 
 export const MyButton = styled.button`
-  background: #32cd32;
+  background: #dda0dd;
   color: white;
   border-radius: 3px;
   border-radius: 3px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 
 export const Form = styled.form`

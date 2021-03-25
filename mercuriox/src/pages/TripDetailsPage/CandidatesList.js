@@ -1,18 +1,21 @@
-import React from "react";
-import CandidateItem from './CandidateItem';
+import React from 'react'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import { List } from '@material-ui/core';
+import CandidateItem from "./CandidateItem"
 
 export default function CandidatesList(props) {
-  return (
-      <div>
-          <div>
-            <h5>
-              Lista de candidatos
-          </h5>
-            <p>
-              {props.candidates.map(candidate => {
-                return <CandidateItem candidate={candidate} decideCandidate={props.decideCandidate}/>
-              })}
-            </p>
-          </div>
-        </div>
-  )}
+  return <Card>
+    <CardContent>
+      <Typography variant={'h5'} gutterBottom>
+        Lista de candidatos
+    </Typography>
+      <List>
+        {props.candidates.map(candidate => {
+          return <CandidateItem candidate={candidate} decideCandidate={props.decideCandidate}/>
+        })}
+      </List>
+    </CardContent>
+  </Card>
+}

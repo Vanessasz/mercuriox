@@ -1,16 +1,17 @@
+
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { useForm } from "../../hooks/useForm";
 import axios from "axios";
-import { CreateTripsForm } from "../CreateTripPage/styles";
+import { CreateTripsForm, Division } from "../CreateTripPage/styles";
 export default function CreateTripPage() {
   const [form, onChangeInput] = useForm({
-    name: "",
-    planet: "",
-    description: "",
-    duration: "",
-  });
+    name: '',
+    planet: '',
+    description: '',
+    duration: ''
+  })
 
   useProtectedPage();
 
@@ -43,30 +44,28 @@ export default function CreateTripPage() {
         }
       )
       .then((response) => {
+        console.log("RESPONSE", response)
         history.push("/viagens");
       });
   };
 
   return (
-    <div>
+    <Division>
       <p>Criar viagem</p>
       <CreateTripsForm>
-        <form>
+        <form onSubmit={onSubmitForm}>
           <label>Nome:</label>
           <input
-            value={form.name}
+            value={form['name']}
             type="text"
             name="name"
-            pattern={"[A-Za-z]{3,}"}
-            required
             onChange={onChangeInput}
           />
           <label>Planeta:</label>
           <input
-            value={form.planet}
-            type="number"
+            value={form['planet']}
+            type="text"
             name="planet"
-            min="18"
             onChange={onChangeInput}
           />
 
@@ -81,7 +80,7 @@ export default function CreateTripPage() {
           />
           <label>Descrição:</label>
           <input
-            value={form.description}
+            value={form['description']}
             onChange={onChangeInput}
             name={"description"}
             type={"text"}
@@ -89,16 +88,14 @@ export default function CreateTripPage() {
           />
           <label>Duração em dias:</label>
           <input
-            value={form.durationInDays}
+            value={form['duration']}
             type="number"
-            name="durationInDays"
-            pattern={"[A-Za-z]{30,}"}
-            required
+            name="duration"
             onChange={onChangeInput}
           />
           <button type={"submit"}>Enviar</button>
         </form>
       </CreateTripsForm>
-    </div>
+    </Division>
   );
 }
