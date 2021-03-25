@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Division, Title, Form, Button, Select } from "./styles";
+import { Division, Title, Form, MyButton, Select } from "./styles";
 import axios from "axios";
-import { useForm } from '../../hooks/useForm'
-import { useTripsList } from "../../hooks/useTripslist"
+import { useForm } from "../../hooks/useForm";
+import { useTripslist } from "../../hooks/useTripslist";
 
 export default function ApplicationFormPage() {
-  
-  const trips = useTripsList();
+  const trips = useTripslist();
   const [form, onChangeInput] = useForm({
     name: "",
     age: "",
     applicationText: "",
     profession: "",
     country: "",
-    trip: null
+    trip: null,
   });
   const onSubmitApplication = (e) => {
     e.preventDefault();
@@ -26,11 +25,18 @@ export default function ApplicationFormPage() {
       country: form.country,
     };
 
+   
     axios.post(
       `https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-helena-dumont/trips/${form.trip.id}/apply`,
       body
     );
   };
+
+  const myButton = () => {
+    alert("Inscrição evetuada com sucesso :)")
+       }
+
+
   return (
     <Division>
       <Title>Formulário de inscrição</Title>
@@ -66,34 +72,34 @@ export default function ApplicationFormPage() {
           name="profession"
           onChange={onChangeInput}
         />
-      <form>
-        <label id="select-paises">Países:</label>
-        <Select
-          labelId="select-paises"
-          onChange={onChangeInput}
-          value={form['country']}
-          name={'country'}
-        >
-          <option value={'brasil'}>Brasil</option>
-          <option value={'argentina'}>Argentina</option>
-          <option value={'eua'}>Estados Unidos</option>
-        </Select>
-      </form>
+        <form>
+          <label id="select-paises">Países:</label>
+          <Select
+            labelId="select-paises"
+            onChange={onChangeInput}
+            value={form["country"]}
+            name={"country"}
+          >
+            <option value={"brasil"}>Brasil</option>
+            <option value={"argentina"}>Argentina</option>
+            <option value={"eua"}>Estados Unidos</option>
+          </Select>
+        </form>
 
-      <form>
-        <label id="select-viagens">Viagens:</label>
-        <Select
-          labelId="select-viagens"
-          onChange={onChangeInput}
-          value={form['trip']}
-          name={'trip'}
-        >
-          {trips.map((trip) => {
-            return <option value={trip}>{trip.name}</option>
-          })}
-        </Select>
-      </form>
-      <Button type={'submit'}>Inscrever-se</Button>
+        <form>
+          <label id="select-viagens">Viagens:</label>
+          <Select
+            labelId="select-viagens"
+            onChange={onChangeInput}
+            value={form["trip"]}
+            name={"trip"}
+          >
+            {trips.map((trip) => {
+              return <option value={trip.id}>{trip.name}</option>
+            })}
+          </Select>
+        </form>
+        <MyButton type={"submit"} onClick={myButton}>Inscrever-se</MyButton>
       </Form>
     </Division>
   );

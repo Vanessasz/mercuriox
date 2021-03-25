@@ -12,15 +12,15 @@ export default function LoginPage() {
     const token = localStorage.getItem("token");
 
     if (token) {
-      history.push("/private-page");
+      history.push("/viagens");
     }
   }, [history]);
 
-  const pegaEmail = (event) => {
+  const getEmail = (event) => {
     setEmail(event.target.value);
   };
 
-  const pegaSenha = (event) => {
+  const getPassword = (event) => {
     setSenha(event.target.value);
   };
 
@@ -36,8 +36,7 @@ export default function LoginPage() {
         body
       )
       .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        history.push("/private-page");
+        window.localStorage.setItem("token", res.data.token);
         console.log("Resposta", res);
       })
       .catch((err) => {
@@ -48,8 +47,8 @@ export default function LoginPage() {
   return (
     <Division>
       <Title>Login</Title>
-      Email: <input value={email} onChange={pegaEmail}></input>
-      Senha: <input value={senha} onChange={pegaSenha}></input>
+      Email: <input value={email} onChange={getEmail}></input>
+      Senha: <input value={senha} onChange={getPassword}></input>
       <MyButton onClick={login}>Entrar</MyButton>
     </Division>
   );

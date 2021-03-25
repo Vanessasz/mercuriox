@@ -1,19 +1,24 @@
 import React from "react";
-import TripInfoItem from './TripInfoItem';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import TripInfoItem from "./TripInfoItem"
 
 export default function TripInfo(props) {
   const {name, planet, description, date, durationInDays} = props.info
-  return <div>
-  <div>
-    <h5>
+  return <Card>
+  <CardContent>
+    <Typography variant={'h5'} gutterBottom>
       Informações da viagem
-    </h5>
+    </Typography>
     <TripInfoItem infoName={'Nome'} info={name}/>
     <TripInfoItem infoName={'Planeta'} info={planet}/>
     <TripInfoItem infoName={'Data'} info={date}/>
     <TripInfoItem infoName={'Descrição'} info={description}/>
     <TripInfoItem infoName={'Duração em dias'} info={durationInDays}/>
-  </div>
-</div>
+  </CardContent>
+</Card>
   
 }
