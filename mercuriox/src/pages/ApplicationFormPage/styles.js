@@ -8,11 +8,6 @@ export const Division = styled.div`
   margin-left: 40%;
 `;
 
-export const Title = styled.h1`
-  color: #dda0dd;
-  font-size: 2rem;
-`;
-
 export const MyButton = styled.button`
   background: #dda0dd;
   color: white;
@@ -47,7 +42,7 @@ export const Form = styled.form`
     height: 46px;
     outline: 0;
     margin-bottom: 20px;
-    padding: 50 20px;
+    padding: 30 20px;
     color: #222;
     font-size: 15px;
     width: 80vw;

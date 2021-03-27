@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Division, Title, Form, MyButton, Select } from "./styles";
+import { Division, Title, Form, Select } from "./styles";
+import { Button } from "@material-ui/core";
 import axios from "axios";
 import { useForm } from "../../hooks/useForm";
 import { useTripslist } from "../../hooks/useTripslist";
@@ -33,13 +34,13 @@ export default function ApplicationFormPage() {
   };
 
   const myButton = () => {
-    alert("Inscrição evetuada com sucesso :)")
+    alert("Inscrição efetuada com sucesso :)")
        }
 
 
   return (
     <Division>
-      <Title>Formulário de inscrição</Title>
+       <h1>Formulário</h1>
       <Form onSubmit={onSubmitApplication}>
         <label>Nome do candidato:</label>
         <input
@@ -99,7 +100,7 @@ export default function ApplicationFormPage() {
             })}
           </Select>
         </form>
-        <MyButton type={"submit"} onClick={myButton}>Inscrever-se</MyButton>
+        <Button variant={'contained'} color={'secondary'} type={"submit"} onClick={myButton}>Inscrever-se</Button>
       </Form>
     </Division>
   );

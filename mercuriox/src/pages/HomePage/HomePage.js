@@ -1,14 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import {
-  ButtonsContainer,
-  Navegation,
-  Division,
-  MyButtonCand,
-  MyButtonHeader,
-  MyButtonAdmi
-} from "./styles";
-import logo from "../../assets/logo.png";
+import { Button } from "@material-ui/core";
+import PageTitle from "../../components/PageTitle";
+import { Container, Division } from "./styles";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
@@ -28,20 +22,20 @@ export default function HomePage() {
 
   return (
     <Division>
-      <Navegation>
-        <MyButtonHeader onClick={GoToPageStart}>Página Inicial</MyButtonHeader>
-        {/* <MeuBotao onClick={irParaPaginaVerDetalhe}>Detalhe Viagem</MeuBotao> */}
-        <MyButtonHeader onClick={goToPageAbout}>Sobre</MyButtonHeader>
-      </Navegation>
-      <img src={logo} />
-      <ButtonsContainer>
+      <PageTitle title={"MercúrioX"} />
+
+      <Container>
         <Link to={"/login"}>
-          <MyButtonAdmi>Área do administrador</MyButtonAdmi>
+          <Button variant={"outlined"} color={"default"}>
+            Área do administrador
+          </Button>
         </Link>
         <Link to={"/inscricao"}>
-        <MyButtonCand>Quero me candidatar</MyButtonCand>
+          <Button variant={"contained"} color={"secondary"}>
+            Quero me candidatar!
+          </Button>
         </Link>
-      </ButtonsContainer>
+      </Container>
     </Division>
   );
 }

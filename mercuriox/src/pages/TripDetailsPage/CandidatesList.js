@@ -9,7 +9,7 @@ export default function CandidatesList(props) {
   return <Card>
     <CardContent>
       <Typography variant={'h5'} gutterBottom>
-        Lista de candidatos
+      Lista de candidatos
     </Typography>
       <List>
         {props.candidates.map(candidate => {
