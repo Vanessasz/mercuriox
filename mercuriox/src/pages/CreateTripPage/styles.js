@@ -9,7 +9,7 @@ export const Division = styled.div`
 `;
 
 export const CreateTripsForm = styled.div`
-   width: 400px;
+  width: 400px;
   background: #fff;
   padding: 20px;
   display: flex;
@@ -57,19 +57,3 @@ export const CreateTripsForm = styled.div`
     text-decoration: none;
   }
 `;
-
-export const Button = styled.button`
-  color: #fff;
-  font-size: 16px;
-  background: #DDA0DD;
-  height: 36px;
-  border: 0;
-  border-radius: 5px;
-  margin-top: 10px;
-  width: 30%;
-`;
-
-export const Title = styled.h1`
-  color: #dda0dd;
-`;
-

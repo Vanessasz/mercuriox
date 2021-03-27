@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PageTitle from '../../components/PageTitle'
 import { Button, List, ListItem, ListItemText, ListItemLink } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { ListTripsPageContainer } from './styles'
@@ -11,9 +10,9 @@ const ListTripsPage = () => {
   useProtectedPage()
 
   return <ListTripsPageContainer>
-    <PageTitle title={'Lista de Viagens'} />
+    <h1>Lista de Viagens</h1>
     <Link to={'/viagens/criar'}>
-      <Button variant={'contained'} color={'primary'}>Criar viagem</Button>
+      <Button variant={'contained'} color={'default'}>Criar viagem</Button>
     </Link>
 
     <List component="nav">

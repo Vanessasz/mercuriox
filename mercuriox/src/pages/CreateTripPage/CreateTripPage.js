@@ -1,17 +1,18 @@
-
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { useForm } from "../../hooks/useForm";
 import axios from "axios";
 import { CreateTripsForm, Division } from "../CreateTripPage/styles";
+import { Button } from "@material-ui/core";
+
 export default function CreateTripPage() {
   const [form, onChangeInput] = useForm({
-    name: '',
-    planet: '',
-    description: '',
-    duration: ''
-  })
+    name: "",
+    planet: "",
+    description: "",
+    duration: "",
+  });
 
   useProtectedPage();
 
@@ -44,26 +45,26 @@ export default function CreateTripPage() {
         }
       )
       .then((response) => {
-        console.log("RESPONSE", response)
+        console.log("RESPONSE", response);
         history.push("/viagens");
       });
   };
 
   return (
     <Division>
-      <p>Criar viagem</p>
+      <h1>Criar viagem</h1>
       <CreateTripsForm>
         <form onSubmit={onSubmitForm}>
           <label>Nome:</label>
           <input
-            value={form['name']}
+            value={form["name"]}
             type="text"
             name="name"
             onChange={onChangeInput}
           />
           <label>Planeta:</label>
           <input
-            value={form['planet']}
+            value={form["planet"]}
             type="text"
             name="planet"
             onChange={onChangeInput}
@@ -80,7 +81,7 @@ export default function CreateTripPage() {
           />
           <label>Descrição:</label>
           <input
-            value={form['description']}
+            value={form["description"]}
             onChange={onChangeInput}
             name={"description"}
             type={"text"}
@@ -88,13 +89,16 @@ export default function CreateTripPage() {
           />
           <label>Duração em dias:</label>
           <input
-            value={form['duration']}
+            value={form["duration"]}
             type="number"
             name="duration"
             onChange={onChangeInput}
           />
-          <button type={"submit"}>Enviar</button>
         </form>
+        <Button variant={"contained"} color={"secondary"} type={"submit"}>
+          {" "}
+          Criar
+        </Button>
       </CreateTripsForm>
     </Division>
   );
