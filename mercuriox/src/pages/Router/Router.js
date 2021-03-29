@@ -6,7 +6,6 @@ import ListTripsPage from "../ListTripsPage/ListTripsPage";
 import CreateTripPage from "../CreateTripPage/CreateTripPage";
 import LoginPage from "../LoginPage/LoginPage";
 import TripDetailsPage from "../TripDetailsPage/TripDetailsPage";
-import About from "../About/About";
 
 export default function Router() {
   return (
@@ -29,9 +28,6 @@ export default function Router() {
         </Route>
         <Route exact path="/inscricao">
           <ApplicationFormPage />
-        </Route>
-        <Route exact path="/sobre">
-          <About />
         </Route>
       </Switch>
     </BrowserRouter>

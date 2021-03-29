@@ -13,11 +13,10 @@ export default function ApplicationFormPage() {
     applicationText: "",
     profession: "",
     country: "",
-    trip: null,
+    trip: null
   });
   const onSubmitApplication = (e) => {
     e.preventDefault();
-    console.log(form);
     const body = {
       name: form.name,
       age: form.age,
@@ -30,9 +29,14 @@ export default function ApplicationFormPage() {
     axios.post(
       `https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-helena-dumont/trips/${form.trip.id}/apply`,
       body
-    );
-  };
-
+    )
+  .then((response) => {
+    console.log("RESPONSE", response.data.trip)
+  })
+  .catch((err) => {
+    console.log(err)
+  });
+};
   const myButton = () => {
     alert("Inscrição efetuada com sucesso :)")
        }
