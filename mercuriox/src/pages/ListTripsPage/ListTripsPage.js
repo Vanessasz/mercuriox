@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Button, List, ListItem, ListItemText, ListItemLink } from '@material-ui/core'
+import React from "react";
+import { Button, List, ListItem, ListItemText } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { ListTripsPageContainer } from './styles'
 import { useProtectedPage } from '../../hooks/useProtectedPage'

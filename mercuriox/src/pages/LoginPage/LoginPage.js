@@ -37,10 +37,9 @@ export default function LoginPage() {
       )
       .then((res) => {
         window.localStorage.setItem("token", res.data.token);
-        console.log("Resposta", res);
       })
       .catch((err) => {
-        console.log(err);
+        alert("Erro", err);
       });
   };
 

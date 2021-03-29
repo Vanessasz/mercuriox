@@ -7,7 +7,7 @@ import { CreateTripsForm, Division } from "../CreateTripPage/styles";
 import { Button } from "@material-ui/core";
 
 export default function CreateTripPage() {
-  const [form, onChangeInput] = useForm({
+  const [form, onChangeInput, resetState] = useForm({
     name: "",
     planet: "",
     description: "",
@@ -18,7 +18,7 @@ export default function CreateTripPage() {
 
   const history = useHistory();
 
-  const [date, setDate] = useState(new Date());
+  const [date] = useState(new Date());
 
   const onSubmitForm = (event) => {
     event.preventDefault();
@@ -44,9 +44,11 @@ export default function CreateTripPage() {
           },
         }
       )
-      .then((response) => {
-        console.log("RESPONSE", response);
+      .then(() => {
         history.push("/viagens");
+      })
+      .catch(() => {
+        window.alert("Opsss! viagem não criada :(");
       });
   };
 
@@ -94,11 +96,11 @@ export default function CreateTripPage() {
             name="duration"
             onChange={onChangeInput}
           />
+          <Button variant={"contained"} color={"secondary"} type={"submit"}>
+            {" "}
+            Criar
+          </Button>
         </form>
-        <Button variant={"contained"} color={"secondary"} type={"submit"}>
-          {" "}
-          Criar
-        </Button>
       </CreateTripsForm>
     </Division>
   );

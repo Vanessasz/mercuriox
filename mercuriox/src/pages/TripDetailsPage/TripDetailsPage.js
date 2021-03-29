@@ -15,8 +15,7 @@ const TripDetailPage = () => {
   const getTripDetail = () => {
     axios
       .get(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-helena-dumont/trip/
-    ${params.tripId}`,
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-helena-dumont/trip/${params.tripId}`,
         {
           headers: {
             auth: window.localStorage.getItem("token"),
@@ -26,9 +25,12 @@ const TripDetailPage = () => {
       .then((response) => {
         console.log("RESPONSE", response.data.trip)
         setTrip(response.data.trip);
+      }).catch((err) => {
+        console.log(err);
+        window.alert("Opsss! detalhes não encontrados :(");
       });
   };
-
+  
   useEffect(() => {
     getTripDetail();
   }, []);
@@ -38,37 +40,28 @@ const TripDetailPage = () => {
       approve: approve,
     };
 
-    axios
-      .put(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-sant-helena/trips/${params.tripId}/candidates/${candidateId}/decide`,
-        body,
-        {
-          headers: {
-            auth: window.localStorage.getItem("token"),
-          },
-        }
-      )
-      .then(() => {
-        getTripDetail();
-      });
-  };
-
-  return (
-    <div>
-      <h1>Detalhes da viagem</h1>
-      {trip ? (
-        <ContentContainer>
-          <TripInfo info={trip} />
-          <CandidatesList
-            candidates={trip.candidates}
-            decideCandidate={decideCandidate}
-          />
-        </ContentContainer>
-      ) : (
-        <div>Carregando...</div>
-      )}
-    </div>
-  );
+    axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-helena-dumont/trips/${params.tripId}/candidates/${candidateId}/decide`, body, {
+      headers: {
+        auth: window.localStorage.getItem('token')
+      }
+    }).then((response) => {
+      console.log(response.trip.candidates)
+      getTripDetail()
+    }).catch((err) => {
+      console.log(err);
+      window.alert("Opsss! algo está errado :(");
+    });
 };
 
+  return <div>
+   <h1>Detalhes da viagem</h1>
+    {trip ? <ContentContainer>
+      <TripInfo info={trip}/>
+      <CandidatesList 
+        candidates={trip.candidates} 
+        decideCandidate={decideCandidate}
+      />
+    </ContentContainer> : <div>Carregando...</div>}
+  </div>
+}
 export default TripDetailPage;

@@ -57,3 +57,4 @@ export const CreateTripsForm = styled.div`
     text-decoration: none;
   }
 `;
+
