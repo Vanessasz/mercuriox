@@ -23,11 +23,9 @@ const TripDetailPage = () => {
         }
       )
       .then((response) => {
-        console.log("RESPONSE", response.data.trip)
         setTrip(response.data.trip);
       }).catch((err) => {
-        console.log(err);
-        window.alert("Opsss! detalhes não encontrados :(");
+        window.alert("Opsss! detalhes não encontrados :(", err);
       });
   };
   
@@ -44,12 +42,9 @@ const TripDetailPage = () => {
       headers: {
         auth: window.localStorage.getItem('token')
       }
-    }).then((response) => {
-      console.log(response.trip.candidates)
+    }).then(() => {
       getTripDetail()
-    }).catch((err) => {
-      console.log(err);
-      window.alert("Opsss! algo está errado :(");
+    }).catch(() => {
     });
 };
 

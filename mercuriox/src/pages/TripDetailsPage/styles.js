@@ -7,5 +7,5 @@ export const ContentContainer = styled.div`
 `;
 
 export const Division = styled.div`
-  color: blac;
+  color: black;
 `;

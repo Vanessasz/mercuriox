@@ -14,3 +14,8 @@ export const Division = styled.div`
   margin-top: 200px;
   text-align: center;
 `;
+
+export const Title = styled.h1`
+  text-align: center;
+  font-size: 3rem;
+`;
