@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Division, MyButton, Title } from "./styles";
+import { Division, Title } from "./styles";
 import { useHistory } from "react-router-dom";
+import { Button } from '@material-ui/core'
 import axios from "axios";
 
 export default function LoginPage() {
@@ -31,10 +32,10 @@ export default function LoginPage() {
     };
 
     axios
-      .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-helena-dumont/login",
-        body
-      )
+    .post(
+      "https://us-central1-labenu-apis.cloudfunctions.net/labeX/vanessa-helena-dumont/login",
+      body
+    )
       .then((res) => {
         window.localStorage.setItem("token", res.data.token);
       })
@@ -48,8 +49,9 @@ export default function LoginPage() {
       <Title>Login</Title>
       Email: <input value={email} onChange={getEmail}></input>
       Senha: <input value={senha} onChange={getPassword}></input>
-      <MyButton onClick={login}>Entrar</MyButton>
+      <Button variant={'contained'} color={'secondary'} onClick={login}>Entrar</Button>
     </Division>
+   
   );
 }
 

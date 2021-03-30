@@ -1,14 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import { Container, Division } from "./styles";
+import { Container, Division, Title } from "./styles";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const history = useHistory();
   return (
     <Division>
-      <h1>MercúrioX</h1>
+      <Title>MercúrioX</Title>
       <Container>
         <Link to={"/login"}>
           <Button variant={"outlined"} color={"default"}>

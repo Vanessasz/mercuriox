@@ -1,13 +1,20 @@
 import React from "react";
 import { Button, List, ListItem, ListItemText } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import { ListTripsPageContainer } from './styles'
+import { ListTripsPageContainer, ButtonTwo } from './styles'
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 import { useTripslist } from '../../hooks/useTripslist'
+import { useHistory } from "react-router-dom";
 
 const ListTripsPage = () => {
   const trips = useTripslist()
+  const history = useHistory()
   useProtectedPage()
+
+  const logout = () => {
+    localStorage.clear() 
+    history.push("/");
+}
 
   return <ListTripsPageContainer>
     <h1>Lista de Viagens</h1>
@@ -16,6 +23,7 @@ const ListTripsPage = () => {
     </Link>
 
     <List component="nav">
+    <ButtonTwo variant={'contained'} color={'default'} onClick={logout}>Logout</ButtonTwo>
       {trips.map((trip) => {
         return <Link to={`/viagens/detalhe/${trip.id}`}>
           <ListItem button>
