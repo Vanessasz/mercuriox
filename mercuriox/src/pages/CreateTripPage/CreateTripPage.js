@@ -4,10 +4,11 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { useForm } from "../../hooks/useForm";
 import axios from "axios";
 import { CreateTripsForm, Division } from "../CreateTripPage/styles";
-import { Button } from "@material-ui/core";
+import { FormContainer } from '../../components/FormContainer'
+import { TextField, Button } from '@material-ui/core'
 
 export default function CreateTripPage() {
-  const [form, onChangeInput, resetState] = useForm({
+  const [form, onChangeInput ] = useForm({
     name: "",
     planet: "",
     description: "",
@@ -56,16 +57,16 @@ export default function CreateTripPage() {
     <Division>
       <h1>Criar viagem</h1>
       <CreateTripsForm>
-        <form onSubmit={onSubmitForm}>
+        <FormContainer onSubmit={onSubmitForm}>
           <label>Nome:</label>
-          <input
+          <TextField
             value={form["name"]}
             type="text"
             name="name"
             onChange={onChangeInput}
           />
           <label>Planeta:</label>
-          <input
+          <TextField
             value={form["planet"]}
             type="text"
             name="planet"
@@ -73,7 +74,7 @@ export default function CreateTripPage() {
           />
 
           <label>Data:</label>
-          <input
+          <TextField
             value={form.date}
             type="date"
             name="date"
@@ -82,7 +83,7 @@ export default function CreateTripPage() {
             onChange={onChangeInput}
           />
           <label>Descrição:</label>
-          <input
+          <TextField
             value={form["description"]}
             onChange={onChangeInput}
             name={"description"}
@@ -90,7 +91,7 @@ export default function CreateTripPage() {
             required
           />
           <label>Duração em dias:</label>
-          <input
+          <TextField
             value={form["duration"]}
             type="number"
             name="duration"
@@ -100,7 +101,7 @@ export default function CreateTripPage() {
             {" "}
             Criar
           </Button>
-        </form>
+        </FormContainer>
       </CreateTripsForm>
     </Division>
   );
