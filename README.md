@@ -5,7 +5,7 @@
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="overconfident-pipe.surge.sh-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="http://overconfident-pipe.surge.sh/">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 ## 🚀 Tecnologias
@@ -35,8 +35,8 @@ Na parte privada, o administrador deverá ser capaz de:
 Listar todas as Viagens
 Criar novas viagens
 Listar, aprovar e rejeitar inscrições feitas pela parte pública da aplicação
- 💰
+
 
 ## 🔖 Deploy usando o surge
 
-Você pode visualizar o projeto através [desse link](overconfident-pipe.surge.sh). 
+Você pode visualizar o projeto através [desse link](http://overconfident-pipe.surge.sh/). 
