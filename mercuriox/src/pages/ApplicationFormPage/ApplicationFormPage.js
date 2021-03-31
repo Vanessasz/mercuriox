@@ -74,6 +74,7 @@ const onSubmitApplication = (e) => {
       <FormControl>
         <InputLabel id="select-paises">Países</InputLabel>
         <Select
+          color="secondary"
           labelId="select-paises"
           onChange={onChangeInput}
           value={form['country']}
@@ -88,6 +89,7 @@ const onSubmitApplication = (e) => {
       <FormControl>
         <InputLabel id="select-viagens">Viagens</InputLabel>
         <Select
+          color="secondary"
           labelId="select-viagens"
           onChange={onChangeInput}
           value={form['trip']}
