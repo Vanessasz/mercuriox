@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TripInfo from "./TripInfoCard";
 import CandidatesList from "./CandidatesList";
-import { ContentContainer } from "./styles";
+import { ContentContainer, Title} from "./styles";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
@@ -49,7 +49,7 @@ const TripDetailPage = () => {
 };
 
   return <div>
-   <h1>Detalhes da viagem</h1>
+   <Title>Detalhes da viagem</Title>
     {trip ? <ContentContainer>
       <TripInfo info={trip}/>
       <CandidatesList 

@@ -6,6 +6,7 @@ export const ContentContainer = styled.div`
   gap: 80px;
 `;
 
-export const Division = styled.div`
-  color: black;
+export const Title = styled.h1`
+  text-align: center;
+  color: #FF69B4;
 `;

@@ -44,24 +44,28 @@ const onSubmitApplication = (e) => {
     <Title>Formulário</Title>
     <Form onSubmit={onSubmitApplication}>
       <TextField 
+        color="secondary"
         label={'Nome do candidato'} 
         onChange={onChangeInput}
         value={form['name']}
         name={'name'}
       />
       <TextField 
+        color="secondary"
         label={'Idade'} type={'number'} 
         onChange={onChangeInput}
         value={form['age']}
         name={'age'}
       />
       <TextField 
+        color="secondary"
         label={'Texto de aplicação'} helperText="Explique por que você é uma boa pessoa candidata" 
         onChange={onChangeInput}
         value={form['applicationText']}
         name={'applicationText'}
       />
       <TextField 
+        color="secondary"
         label={'Profissão'} 
         onChange={onChangeInput}
         value={form['profession']}
