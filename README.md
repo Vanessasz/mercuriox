@@ -46,5 +46,4 @@ Senha: 123456
 
 ## 🔖 Deploy usando o surge
 
-Você pode visualizar o projeto através [desse link](http://flagrant-organization.surge.sh
-/). 
+Você pode visualizar o projeto através [desse link](http://flagrant-organization.surge.sh/). 
