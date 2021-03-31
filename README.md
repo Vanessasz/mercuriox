@@ -24,7 +24,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Projeto MercúrioX (nome original LabeX)
 Este projeto foi realizado na semana de curso da Labenu, projeto da semana onde poderiamos treinar JS, React, estilização do site e todo conteúdo aplicado até o momento.
 
-A ideia
+A ideia :bulb:
+
 criar uma plataforma de gerenciamento de viagens espaciais. A plataforma terá uma parte pública e uma privada.
 
 Na parte pública qualquer usuário deverá ser capaz de:
@@ -35,6 +36,12 @@ Na parte privada, o administrador deverá ser capaz de:
 Listar todas as Viagens
 Criar novas viagens
 Listar, aprovar e rejeitar inscrições feitas pela parte pública da aplicação
+
+Não tem como se registrar no site pois não houve necessidade então para fazer login
+e visualizar as viagens você precisa desses dados 
+
+email: vanessa@email.com.br
+Senha: 123456
 
 
 ## 🔖 Deploy usando o surge
