@@ -5,7 +5,7 @@
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="http://overconfident-pipe.surge.sh/">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="http:flagrant-organization.surge.sh/">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 ## 🚀 Tecnologias
@@ -46,4 +46,5 @@ Senha: 123456
 
 ## 🔖 Deploy usando o surge
 
-Você pode visualizar o projeto através [desse link](http://overconfident-pipe.surge.sh/). 
+Você pode visualizar o projeto através [desse link](http://flagrant-organization.surge.sh
+/). 
